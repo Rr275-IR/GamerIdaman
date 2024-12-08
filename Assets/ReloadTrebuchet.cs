@@ -50,6 +50,7 @@ public class ReloadTrebuchet : MonoBehaviour
 
     private void GoToGameOver()
     {
-        SceneManager.LoadScene("GAME OVER"); // Ganti "GameOver" dengan nama scene game over kamu
+        SceneManager.LoadScene("GAME OVER LEVEL 1");
     }
+
 }
