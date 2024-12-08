@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement; // Tambahkan ini untuk Scene Management
 
 public class ReloadTrebuchet : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class ReloadTrebuchet : MonoBehaviour
             else
             {
                 Debug.Log("Trebuchet replacement limit reached!");
+                GoToGameOver(); // Pindah ke Game Over Scene jika limit tercapai
             }
         }
     }
@@ -37,11 +39,17 @@ public class ReloadTrebuchet : MonoBehaviour
         replacementCount++;
         UpdateRemainingReplacementsText();
     }
+
     private void UpdateRemainingReplacementsText()
     {
         if (replacementText != null)
         {
             replacementText.text = $"Replacements Left: {maxReplacements - replacementCount}";
         }
+    }
+
+    private void GoToGameOver()
+    {
+        SceneManager.LoadScene("GAME OVER"); // Ganti "GameOver" dengan nama scene game over kamu
     }
 }
