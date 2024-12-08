@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameOverScript : MonoBehaviour
+public class GameOverLevel1Script : MonoBehaviour
 {
     public int maxReplacements = 10; // Batas maksimal penggantian trebuchet
     private int replacementCount = 0; // Jumlah penggantian yang sudah dilakukan
@@ -32,6 +32,6 @@ public class GameOverScript : MonoBehaviour
     }
     private void GoToGameOver()
     {
-        SceneManager.LoadScene("GAME OVER"); // Ganti "GameOver" dengan nama scene kamu
+        SceneManager.LoadScene("GAME OVER LEVEL 1"); // Ganti "GameOver" dengan nama scene kamu
     }
 }
