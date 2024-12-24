@@ -46,6 +46,10 @@ public class ReloadTrebuchet : MonoBehaviour
         {
             replacementText.text = $"Replacements Left: {maxReplacements - replacementCount}";
         }
+        if(replacementCount > maxReplacements)
+        {
+            GoToGameOver();
+        }
     }
 
     private void GoToGameOver()

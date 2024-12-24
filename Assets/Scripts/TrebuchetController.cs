@@ -15,11 +15,11 @@ public class TrebuchetController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKey(KeyCode.Space))
         {
             weight.isKinematic = true;
         }
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKey(KeyCode.Space))
         {
             HingeJoint hingetodestroy;
             hingetodestroy = cannonball.GetComponent<HingeJoint>();

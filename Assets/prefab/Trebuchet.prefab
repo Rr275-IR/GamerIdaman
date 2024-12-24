@@ -781,6 +781,7 @@ GameObject:
   - component: {fileID: 7267501554881669302}
   - component: {fileID: 7267501554881669301}
   - component: {fileID: 7267501554881669298}
+  - component: {fileID: 3873999002843141911}
   m_Layer: 0
   m_Name: cannonball
   m_TagString: Cannonball
@@ -918,6 +919,21 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &3873999002843141911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7267501554881669300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4021b5bedcbfa3e4687d7390de7871e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpForce: 30
+  forceInputField: {fileID: 0}
+  updateButton: {fileID: 1548068113219697673, guid: bdee62ad1494cef4bb51235caeee1718, type: 3}
 --- !u!1 &7267501554913203903
 GameObject:
   m_ObjectHideFlags: 0

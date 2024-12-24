@@ -7,6 +7,8 @@ TagManager:
   - Trebuchet
   - Cannonball
   - Target
+  - InputField
+  - Button
   layers:
   - Default
   - TransparentFX
