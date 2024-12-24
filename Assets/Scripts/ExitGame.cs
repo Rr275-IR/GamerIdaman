@@ -20,4 +20,5 @@ public class ExitGame : MonoBehaviour
         Debug.Log("keluar dari game yeehaa");
         Application.Quit();
     }
+
 }
