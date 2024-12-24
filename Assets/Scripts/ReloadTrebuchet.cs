@@ -1,14 +1,14 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine.SceneManagement; // Tambahkan ini untuk Scene Management
+using UnityEngine.SceneManagement;
 
 public class ReloadTrebuchet : MonoBehaviour
 {
-    public GameObject trebuchetPrefab; // Assign the Trebuchet prefab here
-    public Transform spawnPoint; // Assign a spawn point in the scene
-    public int maxReplacements = 10; // Maximum number of replacements allowed
+    public GameObject trebuchetPrefab;
+    public Transform spawnPoint;
+    public int maxReplacements = 10;
     public TMP_Text replacementText;
-    private int replacementCount = 0; // Tracks how many times the trebuchet has been replaced
+    private int replacementCount = 0;
 
     void Update()
     {
@@ -20,8 +20,7 @@ public class ReloadTrebuchet : MonoBehaviour
             }
             else
             {
-                Debug.Log("Trebuchet replacement limit reached!");
-                GoToGameOver(); // Pindah ke Game Over Scene jika limit tercapai
+                GoToGameOver();
             }
         }
     }
