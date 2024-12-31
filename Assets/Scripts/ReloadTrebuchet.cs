@@ -10,6 +10,10 @@ public class ReloadTrebuchet : MonoBehaviour
     public TMP_Text replacementText;
     private int replacementCount = 0;
 
+    public GameObject inputCanvas; // Canvas Input Force
+    public GameObject gameCanvas;  // Canvas utama game
+    public TMP_InputField forceInputField; // Input Field gaya
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
@@ -35,8 +39,25 @@ public class ReloadTrebuchet : MonoBehaviour
         GameObject newTrebuchet = Instantiate(trebuchetPrefab, spawnPoint.position, spawnPoint.rotation);
         newTrebuchet.name = "TREBUCHET"; // Rename for consistency
         newTrebuchet.tag = "Trebuchet";  // Assign the tag for future recognition
+
         replacementCount++;
         UpdateRemainingReplacementsText();
+
+        // Reset to UI Input Force
+        if (inputCanvas != null)
+        {
+            inputCanvas.SetActive(true); // Tampilkan canvas input gaya
+        }
+
+        if (gameCanvas != null)
+        {
+            gameCanvas.SetActive(false); // Sembunyikan canvas utama game
+        }
+
+        if (forceInputField != null)
+        {
+            forceInputField.text = ""; // Kosongkan input field
+        }
     }
 
     private void UpdateRemainingReplacementsText()
@@ -45,7 +66,7 @@ public class ReloadTrebuchet : MonoBehaviour
         {
             replacementText.text = $"Replacements Left: {maxReplacements - replacementCount}";
         }
-        if(replacementCount > maxReplacements)
+        if (replacementCount > maxReplacements)
         {
             GoToGameOver();
         }
@@ -55,5 +76,4 @@ public class ReloadTrebuchet : MonoBehaviour
     {
         SceneManager.LoadScene("GAME OVER LEVEL 1");
     }
-
 }

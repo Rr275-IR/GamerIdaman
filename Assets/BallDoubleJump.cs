@@ -26,16 +26,44 @@ public class BallDoubleJump : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1) && jumpCount < 1)
         {
-            if (float.TryParse(forceInputField.text, out float newForce))
+            //if (float.TryParse(forceInputField.text, out float newForce))
+            //{
+            //    jumpForce = newForce;
+            //}
+            //else
+            //{
+            //    jumpForce = 30f;
+            //}
+            //rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            //jumpCount++;
+            if (forceInputField != null)
             {
-                jumpForce = newForce;
+                if (float.TryParse(forceInputField.text, out float newForce))
+                {
+                    jumpForce = newForce;
+                }
+                else
+                {
+                    jumpForce = 30f;
+                }
+
+                // Nonaktifkan Canvas setelah gaya diinput
+                if (forceInputField.transform.parent != null)
+                {
+                    forceInputField.transform.parent.gameObject.SetActive(false);
+                }
+
+                rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+                jumpCount++;
             }
-            else
-            {
-                jumpForce = 30f;
-            }
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            jumpCount++;
+
         }
     }
+
+    public void ResetJumpCount()
+    {
+        jumpCount = 0; // Reset jumlah lompatan
+        Debug.Log("Jump count has been reset.");
+    }
+
 }
