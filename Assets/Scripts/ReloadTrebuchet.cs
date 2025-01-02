@@ -43,21 +43,21 @@ public class ReloadTrebuchet : MonoBehaviour
         replacementCount++;
         UpdateRemainingReplacementsText();
 
-        // Reset to UI Input Force
-        if (inputCanvas != null)
-        {
-            inputCanvas.SetActive(true); // Tampilkan canvas input gaya
-        }
+        //Reset to UI Input Force
+        //if (inputCanvas != null)
+        //{
+        //    inputCanvas.SetActive(true); // Tampilkan canvas input gaya
+        //}
 
-        if (gameCanvas != null)
-        {
-            gameCanvas.SetActive(false); // Sembunyikan canvas utama game
-        }
+        //if (gameCanvas != null)
+        //{
+        //    gameCanvas.SetActive(false); // Sembunyikan canvas utama game
+        //}
 
-        if (forceInputField != null)
-        {
-            forceInputField.text = ""; // Kosongkan input field
-        }
+        //if (forceInputField != null)
+        //{
+        //    forceInputField.text = ""; // Kosongkan input field
+        //}
     }
 
     private void UpdateRemainingReplacementsText()
@@ -75,5 +75,22 @@ public class ReloadTrebuchet : MonoBehaviour
     private void GoToGameOver()
     {
         SceneManager.LoadScene("GAME OVER LEVEL 1");
+    }
+    public void ResetUI()
+    {
+        if (inputCanvas != null)
+        {
+            inputCanvas.SetActive(true); // Tampilkan canvas input gaya
+        }
+
+        if (gameCanvas != null)
+        {
+            gameCanvas.SetActive(false); // Sembunyikan canvas utama game
+        }
+
+        if (forceInputField != null)
+        {
+            forceInputField.text = ""; // Kosongkan input field
+        }
     }
 }

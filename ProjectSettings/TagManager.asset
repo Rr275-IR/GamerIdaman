@@ -9,6 +9,9 @@ TagManager:
   - Target
   - InputField
   - Button
+  - InputForce
+  - GameCanvas
+  - ForceSave
   layers:
   - Default
   - TransparentFX

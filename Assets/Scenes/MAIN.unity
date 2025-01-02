@@ -338,7 +338,7 @@ GameObject:
   - component: {fileID: 296321683}
   m_Layer: 5
   m_Name: InputForce
-  m_TagString: Untagged
+  m_TagString: InputForce
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -594,6 +594,17 @@ Transform:
   m_Father: {fileID: 1535701022}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &555972646 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3873999002843141911, guid: 8d3c76e15ae8dde46bfa6120ea35d00f, type: 3}
+  m_PrefabInstance: {fileID: 1777824632}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4021b5bedcbfa3e4687d7390de7871e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &556833109
 GameObject:
   m_ObjectHideFlags: 0
@@ -641,7 +652,7 @@ GameObject:
   - component: {fileID: 636861090}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: GameCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -766,7 +777,6 @@ MonoBehaviour:
   inputCanvas: {fileID: 296321682}
   gameCanvas: {fileID: 636861089}
   forceInputField: {fileID: 824220495}
-  ballDoubleJump: {fileID: 0}
 --- !u!4 &695235238
 Transform:
   m_ObjectHideFlags: 0
@@ -1051,7 +1061,7 @@ GameObject:
   - component: {fileID: 824220495}
   m_Layer: 5
   m_Name: InputFieldForce
-  m_TagString: Untagged
+  m_TagString: InputField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1227,7 +1237,7 @@ GameObject:
   - component: {fileID: 826795839}
   m_Layer: 5
   m_Name: Button
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1300,6 +1310,30 @@ MonoBehaviour:
       - m_Target: {fileID: 695235237}
         m_TargetAssemblyTypeName: InputForceCanvas, Assembly-CSharp
         m_MethodName: SubmitForce
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 555972646}
+        m_TargetAssemblyTypeName: BallDoubleJump, Assembly-CSharp
+        m_MethodName: ButtonChangeForce
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1535701021}
+        m_TargetAssemblyTypeName: ReloadTrebuchet, Assembly-CSharp
+        m_MethodName: ReplaceTrebuchet
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1908,7 +1942,7 @@ GameObject:
   - component: {fileID: 1387342493}
   m_Layer: 5
   m_Name: InputField (TMP)
-  m_TagString: InputField
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -8,14 +8,18 @@ public class InputForceCanvas : MonoBehaviour
 {
     public GameObject inputCanvas; // Canvas untuk input gaya
     public GameObject gameCanvas; // Canvas utama game
+    public TMP_Text saveForce;
     //public GameObject trebuchet;   // referensi ke trebuchet
     public TMP_InputField forceInputField;
-    public BallDoubleJump ballDoubleJump;   // Referensi ke script TrebuchetController
+    //public BallDoubleJump ballDoubleJump;   // Referensi ke script TrebuchetController
 
     // Start is called before the first frame update
     void Start()
     {
-        ShowInputCanvas(); // Tampilkan input canvas saat game mulai
+        //ShowInputCanvas(); // Tampilkan input canvas saat game mulai
+        inputCanvas = GameObject.FindGameObjectWithTag("InputForce");
+        gameCanvas = GameObject.FindGameObjectWithTag("GameCanvas");
+        ShowInputCanvas();
     }
 
     // Update is called once per frame
@@ -33,7 +37,9 @@ public class InputForceCanvas : MonoBehaviour
     {
         if (float.TryParse(forceInputField.text, out float force))
         {
-            //trebuchet.SetForce(force); // Set gaya di trebuchet
+            GameObject temp = GameObject.FindGameObjectWithTag("ForceSave");
+            saveForce = temp.GetComponent<TMP_Text>();
+            saveForce.text = forceInputField.text;
             inputCanvas.SetActive(false);
             gameCanvas.SetActive(true); // Tampilkan canvas utama
         }
@@ -51,10 +57,10 @@ public class InputForceCanvas : MonoBehaviour
         }
 
         // Reset variabel jumpCount di BallDoubleJump
-        if (ballDoubleJump != null)
-        {
-            ballDoubleJump.ResetJumpCount();
-        }
+        //if (ballDoubleJump != null)
+        //{
+        //    ballDoubleJump.ResetJumpCount();
+        //}
 
         // Reset posisi atau kondisi lain jika diperlukan
     }
