@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    // Start is called before the first frame update
     public static AudioManager instance;
     private AudioSource audioSource;
+
     void Awake()
     {
         if (instance == null)
@@ -23,19 +21,16 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        // Muat preferensi pemain dan atur volume
+        audioSource.mute = PlayerPrefs.GetInt("MusicEnabled", 1) == 0;
     }
 
     public void ToggleMusic(bool isEnabled)
     {
+        Debug.Log("ToggleMusic called with: " + isEnabled);
         if (audioSource != null)
         {
             audioSource.mute = !isEnabled;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
