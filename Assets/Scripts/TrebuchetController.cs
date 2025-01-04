@@ -6,10 +6,10 @@ public class TrebuchetController : MonoBehaviour
 {
     public Rigidbody weight;
     public GameObject cannonball;
+    
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame

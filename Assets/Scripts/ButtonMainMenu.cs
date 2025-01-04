@@ -18,6 +18,6 @@ public class ButtonMainMenu : MonoBehaviour
     }
     public void GoToPilihMainMenu()
     {
-        SceneManager.LoadScene("New Scene"); // sesuai nama scene
+        BackButtonManager.LoadScene("New Scene"); // sesuai nama scene
     }
 }

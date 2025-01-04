@@ -42,22 +42,6 @@ public class ReloadTrebuchet : MonoBehaviour
 
         replacementCount++;
         UpdateRemainingReplacementsText();
-
-        //Reset to UI Input Force
-        //if (inputCanvas != null)
-        //{
-        //    inputCanvas.SetActive(true); // Tampilkan canvas input gaya
-        //}
-
-        //if (gameCanvas != null)
-        //{
-        //    gameCanvas.SetActive(false); // Sembunyikan canvas utama game
-        //}
-
-        //if (forceInputField != null)
-        //{
-        //    forceInputField.text = ""; // Kosongkan input field
-        //}
     }
 
     private void UpdateRemainingReplacementsText()
@@ -74,7 +58,7 @@ public class ReloadTrebuchet : MonoBehaviour
 
     private void GoToGameOver()
     {
-        SceneManager.LoadScene("GAME OVER LEVEL 1");
+        BackButtonManager.LoadScene("GAME OVER");
     }
     public void ResetUI()
     {
