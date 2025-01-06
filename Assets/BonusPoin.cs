@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class BonusPoin : MonoBehaviour
 {
-    public int points = 10; // Points to award for hitting this target
+    public int points = 10; 
 
     private UpdateScore gameManager;
 
     private void Start()
     {
-        // Find the UpdateScore (GameManager) script in the scene
         gameManager = FindObjectOfType<UpdateScore>();
 
     }
@@ -21,10 +20,8 @@ public class BonusPoin : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        // Check if the colliding object has the "Cannonball" tag
         if (collision.gameObject.CompareTag("Cannonball"))
         {
-            // Award points via the GameManager
             if (gameManager != null)
             {
                 gameManager.AddPoints(points);

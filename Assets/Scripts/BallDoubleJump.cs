@@ -10,7 +10,6 @@ public class BallDoubleJump : MonoBehaviour
     public TMP_InputField forceInputField;
     public TMP_Text saveForce;
     private bool canDoubleJump = true;
-
     void Start()
     {
         rb = GetComponent<Rigidbody>();

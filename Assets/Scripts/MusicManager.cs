@@ -5,13 +5,11 @@ using UnityEngine;
 public class MusicManager : MonoBehaviour
 {
     private static MusicManager instance;
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -21,11 +19,11 @@ public class MusicManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject); // Jangan hancurkan saat berpindah scene
+            DontDestroyOnLoad(gameObject); 
         }
         else
         {
-            Destroy(gameObject); // Hapus duplikat jika ada
+            Destroy(gameObject);// untuk hapus duplikat bila ada
         }
     }
 }

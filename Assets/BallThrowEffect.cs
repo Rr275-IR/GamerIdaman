@@ -9,10 +9,7 @@ public class BallThrowEffect : MonoBehaviour
     {
         if (cometParticleSystem != null && ballRigidbody != null)
         {
-            // Update the particle system's position
             cometParticleSystem.transform.position = ballRigidbody.position;
-
-            // Align the particle system to the ball's velocity
             Vector3 velocity = ballRigidbody.velocity;
 
             if (velocity.magnitude > 0.01f)

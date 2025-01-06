@@ -3,11 +3,11 @@ using UnityEngine.UI;
 
 public class OptionMenu : MonoBehaviour
 {
-    public Toggle musicToggle; // Sambungkan ini ke Toggle di Inspector
+    public Toggle musicToggle; 
 
     void Start()
     {
-        // Muat preferensi musik dari PlayerPrefs dan atur status Toggle
+
         if (musicToggle != null)
         {
             musicToggle.isOn = PlayerPrefs.GetInt("MusicEnabled", 1) == 1;

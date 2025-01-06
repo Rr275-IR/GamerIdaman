@@ -42,8 +42,8 @@ public class ReloadTrebuchet : MonoBehaviour
                 Destroy(trebuchet);
             }
             GameObject newTrebuchet = Instantiate(trebuchetPrefab, spawnPoint.position, spawnPoint.rotation);
-            newTrebuchet.name = "TREBUCHET"; // Rename for consistency
-            newTrebuchet.tag = "Trebuchet";  // Assign the tag for future recognition
+            newTrebuchet.name = "TREBUCHET";
+            newTrebuchet.tag = "Trebuchet";  
 
             replacementCount++;
             UpdateRemainingReplacementsText();
@@ -72,17 +72,17 @@ public class ReloadTrebuchet : MonoBehaviour
         {
             if (inputCanvas != null)
             {
-            inputCanvas.SetActive(true); // Tampilkan canvas input gaya
+            inputCanvas.SetActive(true);
             }
 
             if (gameCanvas != null)
             {
-            gameCanvas.SetActive(false); // Sembunyikan canvas utama game
+            gameCanvas.SetActive(false); 
             }
 
             if (forceInputField != null)
             {
-            forceInputField.text = ""; // Kosongkan input field
+            forceInputField.text = ""; 
             }
         }
         else

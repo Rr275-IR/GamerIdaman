@@ -5,8 +5,8 @@ using System;
 
 public class BallVelocityDisplay : MonoBehaviour
 {
-    public Rigidbody ballRigidbody; // Referensi ke Rigidbody bola
-    public TMP_Text velocityText;       // Referensi ke UI Text untuk menampilkan kecepatan
+    public Rigidbody ballRigidbody;
+    public TMP_Text velocityText;       
     void Start()
     {
         if (velocityText == null)

@@ -4,7 +4,6 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
     private AudioSource audioSource;
-
     void Awake()
     {
         if (instance == null)
@@ -18,10 +17,9 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    void Start()
+    void Start() 
     {
         audioSource = GetComponent<AudioSource>();
-        // Muat preferensi pemain dan atur volume
         audioSource.mute = PlayerPrefs.GetInt("MusicEnabled", 1) == 0;
     }
 
