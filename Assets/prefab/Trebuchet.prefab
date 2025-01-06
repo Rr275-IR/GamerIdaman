@@ -782,7 +782,6 @@ GameObject:
   - component: {fileID: 7267501554881669301}
   - component: {fileID: 7267501554881669298}
   - component: {fileID: 3873999002843141911}
-  - component: {fileID: 7637975605363486434}
   - component: {fileID: 2004960655703438643}
   m_Layer: 0
   m_Name: cannonball
@@ -937,20 +936,6 @@ MonoBehaviour:
   jumpForce: 30
   forceInputField: {fileID: 0}
   saveForce: {fileID: 0}
---- !u!114 &7637975605363486434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7267501554881669300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f507d7fd03a85ce42b64756dc975f85f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cometParticleSystem: {fileID: 4944387837857481790, guid: f9a1d8c9af6ee0048aa090bb77b08d9d, type: 3}
-  ballRigidbody: {fileID: 7267501554881669301}
 --- !u!114 &2004960655703438643
 MonoBehaviour:
   m_ObjectHideFlags: 0
