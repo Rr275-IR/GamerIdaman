@@ -13,6 +13,7 @@ TagManager:
   - GameCanvas
   - ForceSave
   - Plane
+  - Velocity
   layers:
   - Default
   - TransparentFX

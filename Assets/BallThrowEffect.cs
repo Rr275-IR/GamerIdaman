@@ -2,40 +2,23 @@ using UnityEngine;
 
 public class BallThrowEffect : MonoBehaviour
 {
-    public ParticleSystem ballTrailParticle; // Drag & drop Particle System
-    private Vector3 previousPosition;
-
-    void Start()
-    {
-        previousPosition = transform.position;
-        if (ballTrailParticle != null)
-        {
-            ballTrailParticle.Stop(); // Pastikan partikel tidak aktif di awal
-        }
-    }
+    public ParticleSystem cometParticleSystem;
+    public Rigidbody ballRigidbody;
 
     void Update()
     {
-        // Hitung kecepatan bola berdasarkan perubahan posisi
-        float movementSpeed = (transform.position - previousPosition).magnitude / Time.deltaTime;
-
-        // Jika bola bergerak cepat, nyalakan partikel
-        if (movementSpeed > 0.1f) // Sesuaikan threshold ini
+        if (cometParticleSystem != null && ballRigidbody != null)
         {
-            if (ballTrailParticle != null && !ballTrailParticle.isPlaying)
+            // Update the particle system's position
+            cometParticleSystem.transform.position = ballRigidbody.position;
+
+            // Align the particle system to the ball's velocity
+            Vector3 velocity = ballRigidbody.velocity;
+
+            if (velocity.magnitude > 0.01f)
             {
-                ballTrailParticle.Play();
+                cometParticleSystem.transform.rotation = Quaternion.LookRotation(-velocity); // Negative to point the trail backward
             }
         }
-        else
-        {
-            if (ballTrailParticle != null && ballTrailParticle.isPlaying)
-            {
-                ballTrailParticle.Stop();
-            }
-        }
-
-        // Simpan posisi sebelumnya
-        previousPosition = transform.position;
     }
 }

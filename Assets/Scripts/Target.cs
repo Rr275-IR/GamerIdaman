@@ -21,11 +21,12 @@ public class Target : MonoBehaviour
         gameManager = FindObjectOfType<UpdateScore>();
 
         // Add an AudioSource if hitSound is assigned
-        if (hitSound != null)
-        {
-            audioSource = gameObject.AddComponent<AudioSource>();
-            audioSource.clip = hitSound;
-        }
+        //if (hitSound != null)
+        //{
+        //    audioSource = gameObject.AddComponent<AudioSource>();
+        //    audioSource.clip = hitSound;
+        //}
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -53,9 +54,9 @@ public class Target : MonoBehaviour
             }
 
             // Play the hit sound, if assigned
-            if (audioSource != null && hitSound != null)
+            if (hitSound != null)
             {
-                audioSource.Play();
+                AudioManager2.Instance.PlaySound(hitSound);
             }
 
             // Destroy the target (optional, you can remove this line if the target should remain)

@@ -10,38 +10,44 @@ public class ReloadTrebuchet : MonoBehaviour
     public TMP_Text replacementText;
     private int replacementCount = 0;
 
-    public GameObject inputCanvas; // Canvas Input Force
-    public GameObject gameCanvas;  // Canvas utama game
-    public TMP_InputField forceInputField; // Input Field gaya
-
+    public GameObject inputCanvas;
+    public GameObject gameCanvas; 
+    public TMP_InputField forceInputField;
+    void Start()
+    {
+        if (forceInputField == null)
+        {
+            GameObject inputFieldObject = GameObject.FindGameObjectWithTag("InputField");
+            if (inputFieldObject != null)
+            {
+                forceInputField = inputFieldObject.GetComponent<TMP_InputField>();
+            }
+        }
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            if (replacementCount < maxReplacements)
-            {
-                ReplaceTrebuchet();
-            }
-            else
-            {
-                GoToGameOver();
-            }
+                ResetUI();
         }
     }
 
     public void ReplaceTrebuchet()
     {
-        GameObject[] existingTrebuchets = GameObject.FindGameObjectsWithTag("Trebuchet");
-        foreach (GameObject trebuchet in existingTrebuchets)
+        if (float.TryParse(forceInputField.text, out float newForce))
         {
-            Destroy(trebuchet);
-        }
-        GameObject newTrebuchet = Instantiate(trebuchetPrefab, spawnPoint.position, spawnPoint.rotation);
-        newTrebuchet.name = "TREBUCHET"; // Rename for consistency
-        newTrebuchet.tag = "Trebuchet";  // Assign the tag for future recognition
+            GameObject[] existingTrebuchets = GameObject.FindGameObjectsWithTag("Trebuchet");
+            foreach (GameObject trebuchet in existingTrebuchets)
+            {
+                Destroy(trebuchet);
+            }
+            GameObject newTrebuchet = Instantiate(trebuchetPrefab, spawnPoint.position, spawnPoint.rotation);
+            newTrebuchet.name = "TREBUCHET"; // Rename for consistency
+            newTrebuchet.tag = "Trebuchet";  // Assign the tag for future recognition
 
-        replacementCount++;
-        UpdateRemainingReplacementsText();
+            replacementCount++;
+            UpdateRemainingReplacementsText();
+        }
     }
 
     private void UpdateRemainingReplacementsText()
@@ -62,19 +68,26 @@ public class ReloadTrebuchet : MonoBehaviour
     }
     public void ResetUI()
     {
-        if (inputCanvas != null)
+        if (replacementCount != maxReplacements && replacementCount < maxReplacements)
         {
+            if (inputCanvas != null)
+            {
             inputCanvas.SetActive(true); // Tampilkan canvas input gaya
-        }
+            }
 
-        if (gameCanvas != null)
-        {
+            if (gameCanvas != null)
+            {
             gameCanvas.SetActive(false); // Sembunyikan canvas utama game
-        }
+            }
 
-        if (forceInputField != null)
-        {
+            if (forceInputField != null)
+            {
             forceInputField.text = ""; // Kosongkan input field
+            }
+        }
+        else
+        {
+            GoToGameOver();
         }
     }
 }

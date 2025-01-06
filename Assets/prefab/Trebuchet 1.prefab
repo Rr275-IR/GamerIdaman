@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 7267501554534601285}
   - component: {fileID: 7267501554534601286}
   m_Layer: 0
-  m_Name: Trebuchet
+  m_Name: Trebuchet 1
   m_TagString: Trebuchet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -784,7 +784,8 @@ GameObject:
   - component: {fileID: 7267501554881669298}
   - component: {fileID: 3873999002843141911}
   - component: {fileID: 7637975605363486434}
-  - component: {fileID: 2004960655703438643}
+  - component: {fileID: 5240670155572884286}
+  - component: {fileID: 6112920163969381548}
   m_Layer: 0
   m_Name: cannonball
   m_TagString: Cannonball
@@ -864,7 +865,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7267501554881669300}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 9a19eb97017f54e469a4e9e9a2271625, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -951,7 +952,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cometParticleSystem: {fileID: 4954393089194648821, guid: 750824e1e7608ba45a8c6ff083a816dc, type: 3}
   ballRigidbody: {fileID: 7267501554881669301}
---- !u!114 &2004960655703438643
+--- !u!114 &5240670155572884286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7267501554881669300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c16dad8330996a49840f33eade2b6a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stopThreshold: 0.1
+  rollingFriction: 0.01
+--- !u!114 &6112920163969381548
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
